@@ -1,0 +1,49 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.0-SNAPSHOT'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.console'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
+	maven { url 'https://repo.spring.io/snapshot' }
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'junit:junit:4.13.1'
+	runtimeOnly 'com.h2database:h2'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'junit', module: 'junit' //by both name and group
+	}
+
+
+	//swagger
+	implementation group: 'io.springfox', name:'springfox-swagger2', version: '3.0.0'
+	implementation group: 'io.springfox', name:'springfox-swagger-ui', version: '3.0.0'
+
+	implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.13.1'
+
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: '2.6.3'
+
+//	testImplementation group: 'com.icegreen', name: 'greenmail-junit5', version: '1.6.5'
+//	testImplementation group: 'com.icegreen', name: 'greenmail', version: '1.6.5'
+
+	testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.6.3'
+	testImplementation "org.junit.jupiter:junit-jupiter-api:5.6.3"
+	testImplementation "org.junit.jupiter:junit-jupiter-params:5.6.3"
+	testImplementation group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
+
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

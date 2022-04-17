@@ -20,6 +20,7 @@ import javax.mail.internet.MimeMessage;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,7 +57,7 @@ public class PaymentServiceImpl implements PaymentService {
                 transaction.setFromAccount((Long) result[1]);
                 transaction.setToAccount((Long) result[2]);
                 transaction.setAmount((Long) result[3]);
-                transaction.setTransactionTimeStamp((LocalDateTime) result[4]);
+                transaction.setTransactionTimeStamp((LocalDateTime)result[4]);
                 transaction.setFromAccountName((String) result[5]);
                 transaction.setToAccountName((String) result[6]);
                 if( account.equals((Long) result[1])){

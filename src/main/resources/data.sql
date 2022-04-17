@@ -12,6 +12,10 @@ INSERT INTO account (account_no, name, email, balance )
 VALUES(10002,  'Barnendu', 'pal.barnendu@gmail.com', 200);
 INSERT INTO account (account_no, name, email, balance )
 VALUES(10003,  'Andrei', 'andrei@email.com', 200);
+INSERT INTO account (account_no, name, email, balance )
+VALUES(10004,  'Jassi', 'Jassi@email.com', 200);
+INSERT INTO account (account_no, name, email, balance )
+VALUES(10005,  'Adam', 'Adami@email.com', 200);
 
 
 create table transactions
